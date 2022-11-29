@@ -1,0 +1,83 @@
+html,
+body {
+  height: 100vh;
+  background: whitesmoke !important;
+}
+
+.slick-list > div {
+  margin-left: 0;
+}
+
+.slick-dots-custom {
+  margin-top: -40px;
+  .dot {
+    width: 14px;
+    height: 14px;
+    background: white;
+    border: 2px solid teal;
+    border-radius: 50%;
+  }
+}
+
+.slick-dots .slick-active {
+  left: -4px;
+}
+
+.slick-dots li {
+  transition: width 0.3s ease-in-out;
+}
+
+.slick-dots .slick-active .slick-dots-custom .dot {
+  background: teal;
+  border: 2px solid white;
+  width: 20px;
+  border-radius: 10px;
+  top: 0;
+}
+
+.divider > span:before,
+.divider > span:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 9999px;
+  height: 1px;
+  background: grey;
+}
+
+.divider {
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  span {
+    position: relative;
+    display: inline-block;
+  }
+}
+
+.divider > span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+
+.divider > span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Kanit";
+  src: url("/fonts/Kanit-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Kanit";
+  src: url("/fonts/Kanit-Bold.ttf");
+  font-weight: bold;
+}
