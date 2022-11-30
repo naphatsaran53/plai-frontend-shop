@@ -17,7 +17,7 @@ import {
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { CardProduct } from "@/components/Card";
+import { CardProduct, CardCategory } from "@/components/Card";
 
 const Home = () => {
   const bannerSettings = {
@@ -162,38 +162,6 @@ const Home = () => {
     },
   ];
 
-  const CardCategory = ({ label, image }: any) => {
-    return (
-      <Box
-        textAlign="center"
-        shadow="md"
-        borderRadius="md"
-        bgColor="white"
-        h={120}
-        position="relative"
-      >
-        <Image
-          h="full"
-          w="full"
-          alt="test"
-          borderRadius="md"
-          position="absolute"
-          src={image}
-        />
-        <Text
-          mt={12}
-          w="full"
-          mx="auto"
-          position="absolute"
-          fontWeight="bold"
-          color="white"
-        >
-          {label}
-        </Text>
-      </Box>
-    );
-  };
-
   const CardArticle = ({ image, title, subTitle }: any) => {
     return (
       <Box mb={4} bgColor="white" borderRadius="md" shadow="md" h={120}>
@@ -300,7 +268,7 @@ const Home = () => {
         <Text fontSize={26} mb={2} color="teal" fontWeight="bold">
           หมวดหมู่สินค้า
         </Text>
-        <SimpleGrid columns={{ base: 1, md: 8 }} spacing={3}>
+        <SimpleGrid columns={{ base: 1, md: 4 }} spacing={3}>
           {categories.map((item, index) => (
             <Box key={index} textAlign="center">
               <CardCategory {...item} />

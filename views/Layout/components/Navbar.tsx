@@ -23,6 +23,7 @@ import {
   FaUserAlt,
   FaKey,
   FaBook,
+  FaPlay,
 } from "react-icons/fa";
 
 interface INavbarProps {
@@ -44,7 +45,7 @@ const Navbar = ({
 }: INavbarProps) => {
   const router = useRouter();
 
-  const showUser = false;
+  const showUser = true;
   return (
     <Box shadow="md" bgColor="rgba(255,255,255,0.72)" p={3}>
       <Container maxW="6xl">
@@ -103,6 +104,12 @@ const Navbar = ({
                     </Flex>
                   </MenuButton>
                   <MenuList>
+                    <MenuItem
+                      icon={<FaPlay />}
+                      onClick={() => router.push("/confirm-payment")}
+                    >
+                      แจ้งชำระเงิน
+                    </MenuItem>
                     <MenuItem
                       icon={<FaBook />}
                       onClick={() => router.push("/history")}

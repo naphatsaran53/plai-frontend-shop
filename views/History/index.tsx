@@ -25,6 +25,11 @@ import {
 function History() {
   return (
     <Container maxW="6xl" mt={4}>
+      <Box mb={4} px={2} py={2} textAlign="right">
+        <Button colorScheme="blue" type="submit">
+          แจ้งชำระเงิน
+        </Button>
+      </Box>
       <Box bgColor="white" borderRadius="md" mb={4} px={2} py={2}>
         <Tabs isFitted>
           <TabList>
