@@ -61,15 +61,15 @@ const Login = ({ isOpenModal, onCloseModal }: ILoginProps) => {
   return (
     <Modal isCentered isOpen={isOpen} onClose={onCloseModal}>
       <ModalOverlay />
-      <ModalContent>
-        <ModalHeader alignSelf="center" fontSize={24}>
+      <ModalContent bgColor="#302f2f">
+        <ModalHeader alignSelf="center" color="white" fontSize={24}>
           เข้าสู่ระบบ
         </ModalHeader>
         <ModalCloseButton />
         <form onSubmit={handleSubmit(handleOnSubmit)}>
           <ModalBody>
             <Box textAlign="center">
-              <Text color="teal" fontSize={14} mb={2}>
+              <Text color="white" fontSize={14} mb={2}>
                 เข้าสู่ระบบเพื่อซื้อสินค้า
               </Text>
             </Box>

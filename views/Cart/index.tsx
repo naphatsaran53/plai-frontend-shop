@@ -24,31 +24,31 @@ function Cart() {
 
   return (
     <Container maxW="6xl" mt={4}>
-      <Box bgColor="white" borderRadius="md" mb={4} px={6}>
+      <Box bgColor="#302f2f" borderRadius="md" mb={4} px={6}>
         <Grid p={4} templateColumns="repeat(8, 1fr)">
           <GridItem colSpan={1}>
             <Flex h="full" align="center">
               <Checkbox />
             </Flex>
           </GridItem>
-          <GridItem colSpan={3} fontWeight="bold" fontSize={18}>
+          <GridItem colSpan={3} fontWeight="bold" color="white" fontSize={18}>
             สินค้า
           </GridItem>
-          <GridItem colSpan={1} fontWeight="bold" fontSize={18}>
+          <GridItem colSpan={1} fontWeight="bold" color="white" fontSize={18}>
             ราคาต่อชิ้น
           </GridItem>
-          <GridItem colSpan={1} fontWeight="bold" fontSize={18}>
+          <GridItem colSpan={1} fontWeight="bold" color="white" fontSize={18}>
             จำนวน
           </GridItem>
-          <GridItem colSpan={1} fontWeight="bold" fontSize={18}>
+          <GridItem colSpan={1} fontWeight="bold" color="white" fontSize={18}>
             ราคารวม
           </GridItem>
-          <GridItem colSpan={1} fontWeight="bold" fontSize={18}>
+          <GridItem colSpan={1} fontWeight="bold" color="white" fontSize={18}>
             ลบ
           </GridItem>
         </Grid>
       </Box>
-      <Box bgColor="white" borderRadius="md" py={4} mb={4} px={6}>
+      <Box bgColor="#302f2f" borderRadius="md" py={4} mb={4} px={6}>
         {["", ""].map((item, index) => (
           <Grid p={4} key={index} templateColumns="repeat(8, 1fr)">
             <GridItem colSpan={1}>
@@ -64,12 +64,14 @@ function Cart() {
                   w="80px"
                   src="https://bigwin.s3.ap-southeast-1.amazonaws.com/images/navaracha/product/IMGMAIN90.jpeg?1654427550"
                 />
-                <Text ml={2}>แก้ของเสริมดวง</Text>
+                <Text color="white" ml={2}>
+                  แก้ของเสริมดวง
+                </Text>
               </Flex>
             </GridItem>
             <GridItem colSpan={1}>
               <Flex h="full" align="center">
-                <Text> 499 บาท</Text>
+                <Text color="white"> 499 บาท</Text>
               </Flex>
             </GridItem>
             <GridItem colSpan={1}>
@@ -80,7 +82,7 @@ function Cart() {
                       <Icon as={FaPlus} />
                     </Button>
                   </InputLeftAddon>
-                  <Input w="50px" type="number" />
+                  <Input w="50px" type="number" color="white" />
                   <InputRightAddon p={0}>
                     <Button size="sm" p={0}>
                       <Icon as={FaMinus} />
@@ -91,7 +93,7 @@ function Cart() {
             </GridItem>
             <GridItem colSpan={1}>
               <Flex h="full" align="center">
-                <Text> 499 บาท</Text>
+                <Text color="white"> 499 บาท</Text>
               </Flex>
             </GridItem>
             <GridItem colSpan={1}>
@@ -104,8 +106,8 @@ function Cart() {
           </Grid>
         ))}
       </Box>
-      <Box bgColor="white" textAlign="right" borderRadius="md" p={4} px={8}>
-        <Text as="span" mr={4} color="teal" fontSize={18}>
+      <Box bgColor="#302f2f" textAlign="right" borderRadius="md" p={4} px={8}>
+        <Text as="span" mr={4} color="white" fontSize={18}>
           ราคารวม 499 บาท
         </Text>
         <Button

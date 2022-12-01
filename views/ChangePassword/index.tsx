@@ -12,17 +12,17 @@ const ChangePassword = () => {
   return (
     <Container maxW="6xl" mt={4}>
       <Box mt={10}>
-        <Text fontWeight="bold" fontSize={28}>
+        <Text color="white" fontWeight="bold" fontSize={28}>
           เปลี่ยนรหัสผ่าน
         </Text>
       </Box>
-      <Box bgColor="white" borderRadius="md" mb={4} mt={6} px={2} py={10}>
+      <Box bgColor="#302f2f" borderRadius="md" mb={4} mt={6} px={2} py={10}>
         <Container>
-          <FormControl>
+          <FormControl mb={4}>
             <FormLabel>รหัสผ่านใหม่</FormLabel>
             <Input type="password" />
           </FormControl>
-          <FormControl>
+          <FormControl mb={4}>
             <FormLabel>ยืนยันรหัสผ่านใหม่</FormLabel>
             <Input type="password" />
           </FormControl>

@@ -27,11 +27,11 @@ function ConfirmPayment() {
   return (
     <Container maxW="6xl" mt={4}>
       <Box mt={10}>
-        <Text fontWeight="bold" fontSize={28}>
+        <Text fontWeight="bold" color="white" fontSize={28}>
           ยืนยันการชำระเงิน
         </Text>
       </Box>
-      <Box bgColor="white" borderRadius="md" mb={4} mt={6} px={2} py={10}>
+      <Box bgColor="#302f2f" borderRadius="md" mb={4} mt={6} px={2} py={10}>
         <Container>
           <Controller
             control={control}

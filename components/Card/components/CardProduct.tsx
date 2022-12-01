@@ -13,7 +13,7 @@ import { FaRegHeart } from "react-icons/fa";
 
 const CardProduct = ({ label, image, price }: any) => {
   return (
-    <Box shadow="md" borderRadius="md" bgColor="white">
+    <Box shadow="md" borderRadius="md" bgColor="#302f2f">
       <Box h="140px" position="relative">
         <Link href="/product/1">
           <Image
@@ -27,16 +27,28 @@ const CardProduct = ({ label, image, price }: any) => {
             src={image}
           />
         </Link>
-        <Button position="absolute" size="sm" bottom={2} right={2} p={0}>
+        <Button
+          variant="outline"
+          position="absolute"
+          color="white"
+          size="sm"
+          bottom={2}
+          right={2}
+          p={0}
+        >
           <Icon as={FaRegHeart} />
         </Button>
       </Box>
       <Box p={1}>
-        <Text color="teal" fontSize={16} fontWeight="bold" h="50px">
+        <Text color="white" fontSize={16} fontWeight="bold" h="50px">
           {label}
         </Text>
         <Text color="teal" fontSize={16}>
-          ราคา {price} บาท
+          ราคา
+          <Text as="span" mx={1} fontWeight="bold" color="gold">
+            {price}
+          </Text>
+          บาท
         </Text>
 
         <SimpleGrid mt={2} columns={2} spacing={1}>

@@ -36,7 +36,9 @@ const UploadImage = ({ label, multi, value, onChange, error }: IInputProps) => {
 
   return (
     <FormControl isInvalid={error}>
-      <FormLabel mb={1}>{label}</FormLabel>
+      <FormLabel color="white" mb={1}>
+        {label}
+      </FormLabel>
       {value && (
         <>
           {typeof value === "string" && (
@@ -116,7 +118,7 @@ const UploadImage = ({ label, multi, value, onChange, error }: IInputProps) => {
         <Box
           border={error ? "2px dashed #E53E3E" : "2px dashed #E2E8F0"}
           borderRadius="md"
-          bgColor="whitesmoke"
+          bgColor="teal"
           h={200}
           {...getRootProps()}
           textAlign="center"
@@ -141,7 +143,7 @@ const UploadImage = ({ label, multi, value, onChange, error }: IInputProps) => {
           >
             อัปโหลดรูป
           </Button>
-          <Text mt={2} fontSize="sm" color="teal">
+          <Text mt={2} fontSize="sm" color="white">
             ไฟล์ไม่เกิน 3 MB, รองรับสกุลไฟล์ JPG, JPEG และ PNG เท่านั้น
           </Text>
         </Box>

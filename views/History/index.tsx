@@ -30,7 +30,7 @@ function History() {
           แจ้งชำระเงิน
         </Button>
       </Box>
-      <Box bgColor="white" borderRadius="md" mb={4} px={2} py={2}>
+      <Box bgColor="#302f2f" borderRadius="md" mb={4} px={2} py={2}>
         <Tabs isFitted>
           <TabList>
             <Tab>สำเร็จแล้ว</Tab>
@@ -42,7 +42,12 @@ function History() {
             <TabPanel>
               <Box>
                 <SimpleGrid mt={2} columns={5} spacing={1}>
-                  <Box shadow="md" borderRadius="md" bgColor="white">
+                  <Box
+                    shadow="md"
+                    borderRadius="md"
+                    bgColor="#302f2f"
+                    border="1px solid white"
+                  >
                     <Box h="120px" position="relative">
                       <Image
                         position="absolute"
@@ -58,7 +63,7 @@ function History() {
                       />
                     </Box>
                     <Box p={1}>
-                      <Text color="teal" fontSize={16} fontWeight="bold">
+                      <Text color="white" fontSize={16} fontWeight="bold">
                         แผ่นทองยมราชประทานทรัพย์
                       </Text>
                       <Flex mt={2}>

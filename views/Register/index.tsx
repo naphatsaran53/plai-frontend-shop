@@ -54,8 +54,8 @@ const Register = ({ isOpenModal, onCloseModal }: ILoginProps) => {
   return (
     <Modal isOpen={isOpen} onClose={onCloseModal}>
       <ModalOverlay />
-      <ModalContent>
-        <ModalHeader alignSelf="center" fontSize={24}>
+      <ModalContent bgColor="#302f2f">
+        <ModalHeader alignSelf="center" color="white" fontSize={24}>
           สมัครสสมาชิก
         </ModalHeader>
         <ModalCloseButton />

@@ -58,16 +58,19 @@ function ArticleDetail() {
     fontSize: 18,
     marginBottom: 8,
     whiteSpace: "pre-wrap",
+    color: "white",
   };
 
   return (
     <Container maxW="6xl" mt={4}>
-      <Box bgColor="white" borderRadius="md" py={4} px={10}>
-        <Text fontWeight="bold" fontSize={24} color="teal">
+      <Box bgColor="#302f2f" borderRadius="md" py={4} px={10}>
+        <Text fontWeight="bold" fontSize={24} color="white">
           ดูดวงความรัก เดือนกันยายน 2565 สำหรับ 12 ราศี ฉบับคนโสดและคนมีคู่
         </Text>
         <Flex align="center">
-          <Text fontSize={16}>วันที่โพสต์ 20 พ.ค. 2562</Text>
+          <Text color="teal" fontSize={16}>
+            วันที่โพสต์ 20 พ.ค. 2562
+          </Text>
           <Spacer />
           <Flex mr={1}>
             <FacebookShareButton url="">

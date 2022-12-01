@@ -17,7 +17,11 @@ import {
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { CardProduct, CardCategory } from "@/components/Card";
+import {
+  CardProduct,
+  CardCategory,
+  CardArticleVertical,
+} from "@/components/Card";
 
 const Home = () => {
   const bannerSettings = {
@@ -164,7 +168,7 @@ const Home = () => {
 
   const CardArticle = ({ image, title, subTitle }: any) => {
     return (
-      <Box mb={4} bgColor="white" borderRadius="md" shadow="md" h={120}>
+      <Box mb={4} bgColor="#302f2f" borderRadius="md" shadow="md" h={120}>
         <Grid templateColumns="repeat(5, 1fr)" gap={2}>
           <GridItem colSpan={2}>
             <Image
@@ -178,38 +182,17 @@ const Home = () => {
             />
           </GridItem>
           <GridItem colSpan={3}>
-            <Text fontWeight="bold" fontSize={16}>
+            <Text fontWeight="bold" color="white" fontSize={16}>
               {title}
             </Text>
             <Text h={"70px"} color="teal" fontSize={14}>
               {subTitle}
             </Text>
-            <Text fontSize={14}>วันที่โพสต์ 20 พ.ค. 2562</Text>
+            <Text fontSize={14} color="white">
+              วันที่โพสต์ 20 พ.ค. 2562
+            </Text>
           </GridItem>
         </Grid>
-      </Box>
-    );
-  };
-
-  const CardArticleVertical = ({ image, title, subTitle }: any) => {
-    return (
-      <Box mb={4}>
-        <Image
-          objectFit="cover"
-          w="full"
-          borderRadius="md"
-          h={160}
-          alt="test"
-          src={image}
-          shadow="sm"
-        />
-        <Text fontWeight="bold" fontSize={16}>
-          {title}
-        </Text>
-        <Text h={"46px"} overflow="hidden" color="teal" fontSize={14}>
-          {subTitle}
-        </Text>
-        <Text fontSize={14}>วันที่โพสต์ 20 พ.ค. 2562</Text>
       </Box>
     );
   };
@@ -296,7 +279,7 @@ const Home = () => {
       </Box>
       <Box mt={16}>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
-          <Box mb={4} bgColor="white" borderRadius="md" shadow="md">
+          <Box mb={4} bgColor="#302f2f" borderRadius="md" shadow="md">
             <Image
               w="full"
               borderTopLeftRadius="md"
@@ -307,7 +290,7 @@ const Home = () => {
               src="https://s.isanook.com/ho/0/rp/rc/w555h333/yatxacm1w0/aHR0cHM6Ly9zLmlzYW5vb2suY29tL2hvLzAvdWQvNDgvMjQxNjQxL2NvdmVyX3Nhbm9va19ob3Jvc2NvcGUtMjAyMi5qcGc=.jpg"
             />
             <Box p={2}>
-              <Text fontWeight="bold" fontSize={22}>
+              <Text fontWeight="bold" color="white" fontSize={22}>
                 ดวงรายสัปดาห์ ช่วง 21 - 27 พ.ย.65 โดย หมอฝ้าย
               </Text>
               <Text color="teal">

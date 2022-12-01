@@ -40,7 +40,7 @@ function ArticleList() {
   return (
     <Container maxW="6xl" mt={4}>
       <Box mt={10}>
-        <Text fontWeight="bold" fontSize={28}>
+        <Text fontWeight="bold" color="white" fontSize={28}>
           รวมบทความทั้งหมด
         </Text>
       </Box>

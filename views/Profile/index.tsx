@@ -12,21 +12,21 @@ const Profile = () => {
   return (
     <Container maxW="6xl" mt={4}>
       <Box mt={10}>
-        <Text fontWeight="bold" fontSize={28}>
+        <Text fontWeight="bold" color="white" fontSize={28}>
           ข้อมูลส่วนตัว
         </Text>
       </Box>
-      <Box bgColor="white" borderRadius="md" mb={4} mt={6} px={2} py={10}>
+      <Box bgColor="#302f2f" borderRadius="md" mb={4} mt={6} px={2} py={10}>
         <Container>
-          <FormControl>
+          <FormControl mb={4}>
             <FormLabel>ชื่อ</FormLabel>
             <Input type="text" value="Worawut" />
           </FormControl>
-          <FormControl>
+          <FormControl mb={4}>
             <FormLabel>นามสกุล</FormLabel>
             <Input type="text" value="Niamsiri" />
           </FormControl>
-          <FormControl>
+          <FormControl mb={4}>
             <FormLabel>เบอร์โทร</FormLabel>
             <Input type="text" value="020222222" />
           </FormControl>

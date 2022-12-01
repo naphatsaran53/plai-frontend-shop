@@ -61,6 +61,7 @@ const Catogory = () => {
           position="absolute"
           fontWeight="bold"
           color="white"
+          fontSize={18}
         >
           {label}
         </Text>
@@ -70,7 +71,7 @@ const Catogory = () => {
   return (
     <Container maxW="6xl" mt={4}>
       <Box mt={8}>
-        <Text fontSize={26} mb={2} color="teal" fontWeight="bold">
+        <Text fontSize={26} mb={2} color="white" fontWeight="bold">
           หมวดหมู่สินค้า
         </Text>
         <SimpleGrid columns={{ base: 1, md: 4 }} spacing={3}>

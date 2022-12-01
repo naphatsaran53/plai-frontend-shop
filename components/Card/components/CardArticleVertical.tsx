@@ -17,7 +17,7 @@ const CardArticleVertical = ({ image, title, subTitle }: any) => {
         />
       </Link>
       <Link href="/article/1">
-        <Text fontWeight="bold" fontSize={16}>
+        <Text fontWeight="bold" color="white" fontSize={16}>
           {title}
         </Text>
       </Link>

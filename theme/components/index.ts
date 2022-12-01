@@ -1,2 +1,4 @@
 import { Input } from "./Input";
-export default { Input };
+import { FormLabel } from "./FormLabel";
+
+export default { Input, FormLabel };

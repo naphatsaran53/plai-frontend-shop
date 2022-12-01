@@ -18,11 +18,12 @@ const Footer = () => {
   const headerStyle: TextProps = {
     fontSize: "18px",
     fontWeight: "bold",
-    color: "teal",
+    color: "gold",
   };
 
   const linkStyle: TextProps = {
     fontSize: "14px",
+    color: "white",
   };
 
   const aboutusLinks = [
@@ -98,7 +99,7 @@ const Footer = () => {
   ];
 
   return (
-    <Box bgColor="white" shadow="sm" p={8}>
+    <Box bgColor="#302f2f" borderTop="1px solid gold" shadow="sm" p={8}>
       <Container maxW="6xl">
         <SimpleGrid columns={{ base: 2, md: 5 }}>
           <Box>
