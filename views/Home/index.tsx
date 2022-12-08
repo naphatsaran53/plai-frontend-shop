@@ -168,7 +168,7 @@ const Home = () => {
 
   const CardArticle = ({ image, title, subTitle }: any) => {
     return (
-      <Box mb={4} bgColor="#302f2f" borderRadius="md" shadow="md" h={120}>
+      <Box mb={4} bgColor="#191919" borderRadius="md" shadow="md" h={140}>
         <Grid templateColumns="repeat(5, 1fr)" gap={2}>
           <GridItem colSpan={2}>
             <Image
@@ -176,19 +176,19 @@ const Home = () => {
               w="full"
               borderTopLeftRadius="md"
               borderBottomLeftRadius="md"
-              h={120}
+              h={140}
               alt="test"
               src={image}
             />
           </GridItem>
-          <GridItem colSpan={3}>
-            <Text fontWeight="bold" color="white" fontSize={16}>
+          <GridItem colSpan={3} py={1}>
+            <Text fontWeight="bold" color="gold" fontSize={16}>
               {title}
             </Text>
-            <Text h={"70px"} color="teal" fontSize={14}>
+            <Text h={"68px"} color="white" fontSize={14} overflow="hidden">
               {subTitle}
             </Text>
-            <Text fontSize={14} color="white">
+            <Text fontSize={14} color="teal">
               วันที่โพสต์ 20 พ.ค. 2562
             </Text>
           </GridItem>
@@ -248,20 +248,22 @@ const Home = () => {
         </GridItem>
       </Grid>
       <Box mt={8}>
-        <Text fontSize={26} mb={2} color="teal" fontWeight="bold">
+        <Text fontSize={26} mb={2} color="white" fontWeight="bold">
           หมวดหมู่สินค้า
         </Text>
-        <SimpleGrid columns={{ base: 1, md: 4 }} spacing={3}>
-          {categories.map((item, index) => (
-            <Box key={index} textAlign="center">
-              <CardCategory {...item} />
-            </Box>
-          ))}
-        </SimpleGrid>
+        <Box bgColor="#302f2f" p="20px" borderRadius="lg">
+          <SimpleGrid columns={{ base: 1, md: 4 }} spacing={3}>
+            {categories.map((item, index) => (
+              <Box key={index} textAlign="center">
+                <CardCategory {...item} />
+              </Box>
+            ))}
+          </SimpleGrid>
+        </Box>
       </Box>
       <Box mt={8}>
         <Flex>
-          <Text fontSize={26} mb={2} color="teal" fontWeight="bold">
+          <Text fontSize={26} mb={2} color="white" fontWeight="bold">
             สินค้ายอดนิยม
           </Text>
           <Spacer />
@@ -269,31 +271,36 @@ const Home = () => {
             ดูทั้งหมด
           </Text>
         </Flex>
-        <SimpleGrid columns={{ base: 1, md: 5 }} spacing={3}>
-          {products.map((item, index) => (
-            <Box key={index}>
-              <CardProduct {...item} />
-            </Box>
-          ))}
-        </SimpleGrid>
+        <Box bgColor="#302f2f" p="20px" borderRadius="lg">
+          <SimpleGrid columns={{ base: 1, md: 5 }} spacing={3}>
+            {products.map((item, index) => (
+              <Box key={index}>
+                <CardProduct {...item} />
+              </Box>
+            ))}
+          </SimpleGrid>
+        </Box>
       </Box>
-      <Box mt={16}>
+      <Text fontSize={26} mb={2} mt={10} color="white" fontWeight="bold">
+        บทความล่าสุด
+      </Text>
+      <Box bgColor="#302f2f" p={6} borderRadius="lg">
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
-          <Box mb={4} bgColor="#302f2f" borderRadius="md" shadow="md">
+          <Box mb={4} bgColor="#191919" borderRadius="md" shadow="md">
             <Image
               w="full"
               borderTopLeftRadius="md"
               borderTopRightRadius="md"
               objectFit="cover"
-              h={280}
+              h={320}
               alt="test"
               src="https://s.isanook.com/ho/0/rp/rc/w555h333/yatxacm1w0/aHR0cHM6Ly9zLmlzYW5vb2suY29tL2hvLzAvdWQvNDgvMjQxNjQxL2NvdmVyX3Nhbm9va19ob3Jvc2NvcGUtMjAyMi5qcGc=.jpg"
             />
             <Box p={2}>
-              <Text fontWeight="bold" color="white" fontSize={22}>
+              <Text fontWeight="bold" color="gold" fontSize={22}>
                 ดวงรายสัปดาห์ ช่วง 21 - 27 พ.ย.65 โดย หมอฝ้าย
               </Text>
-              <Text color="teal">
+              <Text color="white">
                 Loripsum - The best generator I could find because it optionally
                 includes lists, formatting, blockquotes and a bunch of other
                 HTML Pan Ipsum
@@ -307,7 +314,7 @@ const Home = () => {
           </Box>
         </SimpleGrid>
       </Box>
-      <Box mt={8}>
+      <Box bgColor="#302f2f" mt={4} p={6} borderRadius="lg">
         <SimpleGrid columns={{ base: 2, md: 4 }} spacing={4}>
           {article2.map((item, index) => (
             <CardArticleVertical {...item} key={index} />

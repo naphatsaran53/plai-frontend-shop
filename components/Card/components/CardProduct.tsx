@@ -40,12 +40,12 @@ const CardProduct = ({ label, image, price }: any) => {
         </Button>
       </Box>
       <Box p={1}>
-        <Text color="white" fontSize={16} fontWeight="bold" h="50px">
+        <Text color="gold" fontSize={16} fontWeight="bold" h="50px">
           {label}
         </Text>
-        <Text color="teal" fontSize={16}>
+        <Text color="white" fontSize={16}>
           ราคา
-          <Text as="span" mx={1} fontWeight="bold" color="gold">
+          <Text as="span" mx={1} fontWeight="bold" color="orange">
             {price}
           </Text>
           บาท

@@ -62,10 +62,10 @@ const Login = ({ isOpenModal, onCloseModal }: ILoginProps) => {
     <Modal isCentered isOpen={isOpen} onClose={onCloseModal}>
       <ModalOverlay />
       <ModalContent bgColor="#302f2f">
-        <ModalHeader alignSelf="center" color="white" fontSize={24}>
+        <ModalHeader alignSelf="center" color="gold" fontSize={24}>
           เข้าสู่ระบบ
         </ModalHeader>
-        <ModalCloseButton />
+        <ModalCloseButton color="white" />
         <form onSubmit={handleSubmit(handleOnSubmit)}>
           <ModalBody>
             <Box textAlign="center">
@@ -85,7 +85,7 @@ const Login = ({ isOpenModal, onCloseModal }: ILoginProps) => {
                 }}
                 render={({ field: { onChange, value } }) => (
                   <InputFormControl
-                    iconLeft={<FaEnvelope color="teal" size={16} />}
+                    iconLeft={<FaEnvelope color="white" size={16} />}
                     placeholder="อีเมลล์"
                     maxLength={100}
                     value={value}
@@ -107,7 +107,7 @@ const Login = ({ isOpenModal, onCloseModal }: ILoginProps) => {
                 }}
                 render={({ field: { onChange, value } }) => (
                   <InputFormControl
-                    iconLeft={<FaKey color="teal" size={16} />}
+                    iconLeft={<FaKey color="white" size={16} />}
                     placeholder="รหัสผ่าน"
                     value={value}
                     onChange={onChange}
@@ -120,7 +120,7 @@ const Login = ({ isOpenModal, onCloseModal }: ILoginProps) => {
               <Link href="/forget-password">
                 <Text
                   as="a"
-                  color="blue"
+                  color="white"
                   textDecorationLine="underline"
                   fontSize={14}
                 >

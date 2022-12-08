@@ -44,7 +44,7 @@ function ArticleList() {
           รวมบทความทั้งหมด
         </Text>
       </Box>
-      <Box mt={10}>
+      <Box bgColor="#302f2f" mt={4} p="20px" borderRadius="lg">
         <SimpleGrid columns={{ base: 2, md: 4 }} spacing={4}>
           {article2.map((item, index) => (
             <CardArticleVertical {...item} key={index} />

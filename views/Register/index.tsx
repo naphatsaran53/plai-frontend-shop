@@ -55,10 +55,10 @@ const Register = ({ isOpenModal, onCloseModal }: ILoginProps) => {
     <Modal isOpen={isOpen} onClose={onCloseModal}>
       <ModalOverlay />
       <ModalContent bgColor="#302f2f">
-        <ModalHeader alignSelf="center" color="white" fontSize={24}>
+        <ModalHeader alignSelf="center" color="gold" fontSize={24}>
           สมัครสสมาชิก
         </ModalHeader>
-        <ModalCloseButton />
+        <ModalCloseButton color="white" />
         <ModalBody>
           <Button w="full" colorScheme="facebook" mb={2} onClick={onClose}>
             <Icon as={FaFacebook} mr={2} />

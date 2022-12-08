@@ -17,14 +17,16 @@ const CardArticleVertical = ({ image, title, subTitle }: any) => {
         />
       </Link>
       <Link href="/article/1">
-        <Text fontWeight="bold" color="white" fontSize={16}>
+        <Text fontWeight="bold" color="gold" fontSize={16}>
           {title}
         </Text>
       </Link>
-      <Text h={"46px"} overflow="hidden" color="teal" fontSize={14}>
+      <Text h={"46px"} overflow="hidden" color="whitesmoke" fontSize={14}>
         {subTitle}
       </Text>
-      <Text fontSize={14}>วันที่โพสต์ 20 พ.ค. 2562</Text>
+      <Text fontSize={14} color="teal">
+        วันที่โพสต์ 20 พ.ค. 2562
+      </Text>
     </Box>
   );
 };

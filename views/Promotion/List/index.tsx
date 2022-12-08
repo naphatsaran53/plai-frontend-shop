@@ -51,11 +51,11 @@ function ArticleList() {
   return (
     <Container maxW="6xl" mt={4}>
       <Box mt={10}>
-        <Text fontWeight="bold" fontSize={28}>
+        <Text fontWeight="bold" color="white" fontSize={28}>
           โปรโมชั่นทั้งหมด
         </Text>
       </Box>
-      <Box mt={10}>
+      <Box bgColor="#302f2f" mt={4} p="20px" borderRadius="lg">
         <SimpleGrid columns={{ base: 2, md: 4 }} spacing={4}>
           {article2.map((item, index) => (
             <CardArticleVertical {...item} key={index} />

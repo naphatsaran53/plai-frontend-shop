@@ -74,13 +74,15 @@ const Catogory = () => {
         <Text fontSize={26} mb={2} color="white" fontWeight="bold">
           หมวดหมู่สินค้า
         </Text>
-        <SimpleGrid columns={{ base: 1, md: 4 }} spacing={3}>
-          {categories.map((item, index) => (
-            <Box key={index} textAlign="center">
-              <CardCategory {...item} />
-            </Box>
-          ))}
-        </SimpleGrid>
+        <Box bgColor="#302f2f" mt={4} p="20px" borderRadius="lg">
+          <SimpleGrid columns={{ base: 1, md: 4 }} spacing={3}>
+            {categories.map((item, index) => (
+              <Box key={index} textAlign="center">
+                <CardCategory {...item} />
+              </Box>
+            ))}
+          </SimpleGrid>
+        </Box>
       </Box>
     </Container>
   );
