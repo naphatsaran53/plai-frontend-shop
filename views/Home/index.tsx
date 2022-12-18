@@ -188,7 +188,7 @@ const Home = () => {
             <Text h={"68px"} color="white" fontSize={14} overflow="hidden">
               {subTitle}
             </Text>
-            <Text fontSize={14} color="teal">
+            <Text fontSize={14} color="green.200">
               วันที่โพสต์ 20 พ.ค. 2562
             </Text>
           </GridItem>

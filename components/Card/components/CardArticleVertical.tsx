@@ -24,7 +24,7 @@ const CardArticleVertical = ({ image, title, subTitle }: any) => {
       <Text h={"46px"} overflow="hidden" color="whitesmoke" fontSize={14}>
         {subTitle}
       </Text>
-      <Text fontSize={14} color="teal">
+      <Text fontSize={14} color="green.200">
         วันที่โพสต์ 20 พ.ค. 2562
       </Text>
     </Box>
