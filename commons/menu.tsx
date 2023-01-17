@@ -12,7 +12,7 @@ export const commonMenus = [
     menuIcon: "sell",
   },
   {
-    menuLink: "/",
+    menuLink: "/howto_buy",
     menuName: "วิธีสั่งซื้อสินค้า",
     menuIcon: "sell",
   },
@@ -20,10 +20,5 @@ export const commonMenus = [
     menuLink: "/promotion",
     menuName: "โปรโมชั่น",
     menuIcon: "commudee",
-  },
-  {
-    menuLink: "/",
-    menuName: "วิธีการใช้งาน",
-    menuIcon: "secret",
   },
 ];

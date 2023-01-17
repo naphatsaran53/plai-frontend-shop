@@ -1,8 +1,25 @@
+import React, { useEffect, useState } from "react";
 import { Box, Container, SimpleGrid, Text } from "@chakra-ui/react";
+import { CardPromotion } from "@/components/Card";
+import axios from "axios";
 
-import { CardArticleVertical } from "@/components/Card";
+export type ProductPromotion = {
+  data: any;
+  productname: string;
+  amount: number;
+};
 
-function ArticleList() {
+const PromotionList = () => {
+  const [dataPromotion, setDataPromotion] = useState<any>([]);
+
+  useEffect(() => {
+    axios
+      .post("https://m-plai.eazydevs.com/api/promotionproduct")
+      .then((response) => {
+        setDataPromotion(response.data.data);
+      });
+  }, []);
+
   const article2 = [
     {
       image:
@@ -57,13 +74,13 @@ function ArticleList() {
       </Box>
       <Box bgColor="#302f2f" mt={4} p="20px" borderRadius="lg">
         <SimpleGrid columns={{ base: 2, md: 4 }} spacing={4}>
-          {article2.map((item, index) => (
-            <CardArticleVertical {...item} key={index} />
+          {dataPromotion.map((item: ProductPromotion, index: any) => (
+            <CardPromotion {...item} key={index} />
           ))}
         </SimpleGrid>
       </Box>
     </Container>
   );
-}
+};
 
-export default ArticleList;
+export default PromotionList;

@@ -1,9 +1,12 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Slider from "react-slick";
 import Link from "next/link";
 import { Box, Image, Text } from "@chakra-ui/react";
 
-const CardCategory = ({ label, image }: any) => {
+const CardCategory = ({ label, image, id, slug }: any) => {
   return (
-    <Link href="/product">
+    <Link href="product" as={`/product/${slug}`}>
       <Box
         textAlign="center"
         shadow="md"

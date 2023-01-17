@@ -1,3 +1,4 @@
+import React, { useEffect, useState, useContext } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import {
@@ -25,6 +26,16 @@ import {
   FaBook,
   FaPlay,
 } from "react-icons/fa";
+import axios from "axios";
+import { DataContext } from "@/pages/_app";
+
+export type Profile = {
+  data: any;
+  membername: string;
+  membersurname: string;
+  memberphone: number;
+  linename: string;
+};
 
 interface INavbarProps {
   menus: IMenuProps[];
@@ -45,7 +56,24 @@ const Navbar = ({
 }: INavbarProps) => {
   const router = useRouter();
 
-  const showUser = false;
+  const { cartNum } = useContext(DataContext);
+
+  const [dataProfile, setDataProfile] = useState<any>([]);
+
+  // const data = useContext(DataContext);
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://m-plai.eazydevs.com/api/memberprofile/U4fd7ba00a8a2f7edb9580139111d2687X"
+      )
+
+      .then((response) => {
+        setDataProfile(response.data.data[0]);
+      });
+  }, []);
+
+  const showUser = true;
   return (
     <Box shadow="md" bgColor="#302f2f" borderBottom="1px solid gold" p={3}>
       <Container maxW="6xl">
@@ -90,16 +118,18 @@ const Navbar = ({
                 <Link href="/cart">
                   <Button position="relative" colorScheme="gold" px={1} mr={2}>
                     <Icon as={FaCartPlus} color="black" />
-                    <Badge
-                      top={1}
-                      right={1}
-                      position="absolute"
-                      borderRadius="50%"
-                      bgColor="red"
-                      color="white"
-                    >
-                      2
-                    </Badge>
+                    {cartNum && (
+                      <Badge
+                        top={1}
+                        right={1}
+                        position="absolute"
+                        borderRadius="50%"
+                        bgColor="red"
+                        color="white"
+                      >
+                        {cartNum}
+                      </Badge>
+                    )}
                   </Button>
                 </Link>
                 <Menu>
@@ -110,7 +140,7 @@ const Navbar = ({
                     rightIcon={<FaChevronDown />}
                   >
                     <Flex align="center">
-                      <Text as="span">Worawut Niamsiri</Text>
+                      <Text as="span">{dataProfile.membername}</Text>
                     </Flex>
                   </MenuButton>
                   <MenuList bgColor="#302f2f">

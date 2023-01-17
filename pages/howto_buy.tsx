@@ -1,0 +1,1 @@
+export { default } from "@/views/Howto_Buy";

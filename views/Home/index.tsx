@@ -1,5 +1,9 @@
+import React, { useEffect, useState, useContext } from "react";
+import axios from "axios";
 import Slider from "react-slick";
 import Link from "next/link";
+import { DataContext } from "@/pages/_app";
+
 import {
   Box,
   Flex,
@@ -21,9 +25,45 @@ import {
   CardProduct,
   CardCategory,
   CardArticleVertical,
+  CardLatestArticle,
 } from "@/components/Card";
 
+export type ProductPoppular = {
+  data: any;
+  productid: number;
+  productname: string;
+  amount: number;
+  slug: string;
+};
+
+export type Article = {
+  data: any;
+  id: number;
+  articledate: string;
+  articledetail: string;
+  articlehead: string;
+  articlepic: string;
+};
+
 const Home = () => {
+  const [dataProductBestSell, setData] = useState<any>([]);
+  const [article, setArticle] = useState<any>([]);
+  const [articleLatest, setArticleleLates] = useState<any>([]);
+  const [articleLatestRight, setArticleleLatesRight] = useState<any>([]);
+
+  useEffect(() => {
+    axios
+      .get("https://m-plai.eazydevs.com/api/productbestsell")
+      .then((response) => {
+        setData(response.data.data);
+      });
+    axios.post("https://m-plai.eazydevs.com/api/article").then((response) => {
+      setArticle(response.data.data);
+      setArticleleLates(response.data.data.slice(4, 5));
+      setArticleleLatesRight(response.data.data.slice(0, 3));
+    });
+  }, []);
+
   const bannerSettings = {
     dots: true,
     arrows: false,
@@ -48,24 +88,28 @@ const Home = () => {
 
   const categories = [
     {
+      slug: "productactivity",
       image:
-        "https://bigwin.s3.ap-southeast-1.amazonaws.com/images/navaracha/product/IMGMAIN89.jpeg?1654427514",
+        "https://bigwin.s3.ap-southeast-1.amazonaws.com/images/navaracha/product/IMGMAIN92.jpeg?1654254012",
       label: "งานพิธีกิจกรรม",
     },
     {
+      slug: "producttanyom",
       image:
-        "https://bigwin.s3.ap-southeast-1.amazonaws.com/images/navaracha/product/IMGMAIN109.jpeg?1660638805",
+        "https://bigwin.s3.ap-southeast-1.amazonaws.com/images/navaracha/product/IMGMAIN92.jpeg?1654254012",
       label: "วัตถุมงคลท่านยม",
     },
     {
-      image:
-        "https://bigwin.s3.ap-southeast-1.amazonaws.com/images/navaracha/product/IMGMAIN90.jpeg?1654427550",
-      label: "แก้ของเสริมดวง",
-    },
-    {
+      slug: "producthoro",
       image:
         "https://bigwin.s3.ap-southeast-1.amazonaws.com/images/navaracha/product/IMGMAIN92.jpeg?1654254012",
-      label: "ดูดวงงานตรวจ",
+      label: "ดูดวง งานตรวจ",
+    },
+    {
+      slug: "productsell",
+      image:
+        "https://bigwin.s3.ap-southeast-1.amazonaws.com/images/navaracha/product/IMGMAIN92.jpeg?1654254012",
+      label: "แก้ของ เสริมดวง",
     },
   ];
 
@@ -124,45 +168,6 @@ const Home = () => {
         "ดูดวงความรัก 12 ราศี เดือนมิถุนายน 2565 โดย อ.มาศฟ้า ยิปซีอินฟินิตี้",
       subTitle:
         "Loripsum - The best generator I could find because it optionally includes lists, formatting, blockquotes",
-    },
-  ];
-
-  const products = [
-    {
-      image:
-        "https://bigwin.s3.ap-southeast-1.amazonaws.com/images/navaracha/product/IMGMAIN113.jpeg?1662877154",
-      label: "แผ่นทองยมราชประทานทรัพย์",
-      price: 499,
-    },
-    {
-      image:
-        "https://bigwin.s3.ap-southeast-1.amazonaws.com/images/navaracha/product/IMGMAIN114.jpeg?1662877234",
-      label: "จี้ล๊อกเก็ตท้าวเวสสุวรรณ (ไซส์เล็ก)",
-      price: 499,
-    },
-    {
-      image:
-        "https://bigwin.s3.ap-southeast-1.amazonaws.com/images/navaracha/product/IMGMAIN89.jpeg?1654427514",
-      label: "แผ่นทองยมราชประทานทรัพย์",
-      price: 499,
-    },
-    {
-      image:
-        "https://bigwin.s3.ap-southeast-1.amazonaws.com/images/navaracha/product/IMGMAIN109.jpeg?1660638805",
-      label: "จี้ล๊อกเก็ตท้าวเวสสุวรรณ (ไซส์เล็ก)",
-      price: 499,
-    },
-    {
-      image:
-        "https://bigwin.s3.ap-southeast-1.amazonaws.com/images/navaracha/product/IMGMAIN90.jpeg?1654427550",
-      label: "จี้ล๊อกเก็ตท้าวเวสสุวรรณ (ไซส์ใหญ่)",
-      price: 499,
-    },
-    {
-      image:
-        "https://bigwin.s3.ap-southeast-1.amazonaws.com/images/navaracha/product/IMGMAIN92.jpeg?1654254012",
-      label: "องค์ท้าวเวสสุวรรณ (สีดำทอง ขนาด 3 นิ้ว)",
-      price: 499,
     },
   ];
 
@@ -267,56 +272,61 @@ const Home = () => {
             สินค้ายอดนิยม
           </Text>
           <Spacer />
-          <Text fontSize={16} textDecorationLine="underline" mb={2}>
+          <Text
+            color="#FFFF"
+            fontSize={16}
+            textDecorationLine="underline"
+            mb={2}
+          >
             ดูทั้งหมด
           </Text>
         </Flex>
         <Box bgColor="#302f2f" p="20px" borderRadius="lg">
           <SimpleGrid columns={{ base: 1, md: 5 }} spacing={3}>
-            {products.map((item, index) => (
+            {dataProductBestSell.map((item: ProductPoppular, index: any) => (
               <Box key={index}>
                 <CardProduct {...item} />
               </Box>
-            ))}
+            ))}{" "}
           </SimpleGrid>
         </Box>
       </Box>
       <Text fontSize={26} mb={2} mt={10} color="white" fontWeight="bold">
         บทความล่าสุด
       </Text>
-      <Box bgColor="#302f2f" p={6} borderRadius="lg">
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
-          <Box mb={4} bgColor="#191919" borderRadius="md" shadow="md">
-            <Image
-              w="full"
-              borderTopLeftRadius="md"
-              borderTopRightRadius="md"
-              objectFit="cover"
-              h={320}
-              alt="test"
-              src="https://s.isanook.com/ho/0/rp/rc/w555h333/yatxacm1w0/aHR0cHM6Ly9zLmlzYW5vb2suY29tL2hvLzAvdWQvNDgvMjQxNjQxL2NvdmVyX3Nhbm9va19ob3Jvc2NvcGUtMjAyMi5qcGc=.jpg"
-            />
-            <Box p={2}>
-              <Text fontWeight="bold" color="gold" fontSize={22}>
-                ดวงรายสัปดาห์ ช่วง 21 - 27 พ.ย.65 โดย หมอฝ้าย
-              </Text>
-              <Text color="white">
-                Loripsum - The best generator I could find because it optionally
-                includes lists, formatting, blockquotes and a bunch of other
-                HTML Pan Ipsum
-              </Text>
-            </Box>
-          </Box>
-          <Box>
+
+      <Box bgColor="#302f2f" mt={4} p={6} borderRadius="lg">
+        <Grid
+          templateRows="repeat(2, 1fr)"
+          templateColumns="repeat(8, 1fr)"
+          gap={4}
+        >
+          <GridItem rowSpan={2} colSpan={3}>
+            {articleLatest.map((item: Article, index: any) => (
+              <CardLatestArticle {...item} key={index} />
+            ))}
+          </GridItem>
+          <GridItem rowSpan={2} colSpan={5}>
+            <SimpleGrid columns={{ base: 2, md: 3 }} spacing={4}>
+              {articleLatestRight.map((item: Article, index: any) => (
+                <CardLatestArticle {...item} key={index} />
+              ))}
+            </SimpleGrid>
+          </GridItem>
+        </Grid>
+      </Box>
+      {/* <Box>
             {article1.map((item, index) => (
               <CardArticle {...item} key={index} />
             ))}
-          </Box>
-        </SimpleGrid>
-      </Box>
+          </Box> */}
+
+      <Text fontSize={26} mb={2} mt={10} color="white" fontWeight="bold">
+        บทความแนะนำ
+      </Text>
       <Box bgColor="#302f2f" mt={4} p={6} borderRadius="lg">
         <SimpleGrid columns={{ base: 2, md: 4 }} spacing={4}>
-          {article2.map((item, index) => (
+          {article.map((item: Article, index: any) => (
             <CardArticleVertical {...item} key={index} />
           ))}
         </SimpleGrid>
